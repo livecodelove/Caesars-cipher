@@ -4,8 +4,12 @@ def function():
     
     result = ''
     for i in words:
+       k = len(i)
+       if not i.isalpha():
+          for j in range(len(i)):
+              if i[j] in ',.!?:':
+                  k -= 1
        for j in range(len(i)):
-           k = - len(i)
            if i[j] not in ',.!?:':
                 if i[j] in english_alphabet.upper():
                     result += english_alphabet[(english_alphabet.upper().index(i[j]) + k) % len(english_alphabet)].upper() 
